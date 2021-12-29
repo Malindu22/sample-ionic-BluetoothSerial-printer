@@ -43,8 +43,8 @@ export class HomePage {
   }
 
   print(){
-      var restname="Joys Burger by Casa Mio";
-      var add="Damm,20-21,38100,Braunschweig";
+      var restname="Joys Burger by Casa Mio WendorKassa";
+      var add="Armin-T-Wegner-Platz, 9, 42134,Elberfeld";
       var tel="0555 655 456 56";
       var cno="FGSNDJGUYD";
       var dme="Dine in";
@@ -86,20 +86,61 @@ export class HomePage {
       console.log(restname.length);
       // this.bluetoothSerial.write(dish+space+price); 
       this.bluetoothSerial.write('\x1b\x61\x01'); 
-      if (restname.length < 20) {
-        this.bluetoothSerial.write(restname); 
+      this.bluetoothSerial.write(this.check_rest_length(restname)+"\n"); 
+      this.bluetoothSerial.write(this.check_address_length(add)+"\n"); 
+      // if (restname.length < 20) {
+      //   this.bluetoothSerial.write(restname); 
+      // }else{
+      //   var restnewname = restname.split(" "); 
+      //   let nname ='';
+      //   for (let i = 0; i < restnewname.length; i++) {
+      //     nname += restnewname[i]+" ";
+      //     if (i===(restnewname.length-3)) {
+      //       nname += "\n"
+      //     }
+      //   }
+         
+        
+        
+      // }
+
+      console.log(this.check_rest_length(restname)) 
+      console.log(this.check_address_length(add)) 
+
+
+
+
+    } 
+    
+    check_rest_length(param){
+      if (param.length < 28) {
+        return param;
       }else{
-        var restnewname = restname.split(" ");
-        console.log(restnewname)  
+        let new__p ='';
+        var new_p = param.split(" "); 
+        for (let i = 0; i < new_p.length; i++) {
+          new__p += new_p[i]+" ";
+          if (i===(new_p.length-3)) {
+            new__p += "\n"
+          }
+        }
+        return new__p;
       }
-
-
-
-
-
-
-
-
+    }
+    check_address_length(param){
+      if (param.length < 28) {
+        return param;
+      }else{
+        let new__p ='';
+        var new_p = param.split(","); 
+        for (let i = 0; i < new_p.length; i++) {
+          new__p += new_p[i]+" ";
+          if (i===(new_p.length-3)) {
+            new__p += "\n"
+          }
+        }
+        return new__p;
+      }
     }
 // this.bluetoothSerial.write("\x1B\x74\x13\x80"); € sign cp1257
   // this.bluetoothSerial.write('\x1b\x61\x00');
