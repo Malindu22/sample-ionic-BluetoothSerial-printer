@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-button (click)="scanBlue()">Scan</ion-button>
+  </div>
+  <div class="connect">
+    connect to - {{ printer }}
+  </div>
+  <div class="printer-data">
+    <div  *ngFor="let data of dataList">
+      <div (click)="Select(data)"> {{ data.address }} -> {{ data.name }}</div>
+    </div>
+  </div>
+  <div>
+    <ion-button (click)="print()">Print</ion-button>
+  </div>
+</ion-content>
