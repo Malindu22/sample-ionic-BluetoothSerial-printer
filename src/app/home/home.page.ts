@@ -173,4 +173,9 @@ export class HomePage {
   // this.bluetoothSerial.write('\x1b\x6c'); 
   // this.bluetoothSerial.write("Margin left"+'\n'); 
   // 0x1b,0x21,0x01
+  // bold
+  //TXT_BOLD_ON: '\x1b\x45\x01'
+  //TXT_BOLD_ON: '\x1b\x33\x08'
+  //TXT_BOLD_ON: '\x1b\x21\x08'
+  //
 }
