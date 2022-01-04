@@ -179,4 +179,5 @@ export class HomePage {
   //TXT_BOLD_ON: '\x1b\x21\x08'
   //let cutpaper = [0x1d, 0x56, 0x42, 0x00];
   //*das*
+  //var bold = [0x1b, 0x45, 0x1];
 }
