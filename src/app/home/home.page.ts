@@ -177,5 +177,5 @@ export class HomePage {
   //TXT_BOLD_ON: '\x1b\x45\x01'
   //TXT_BOLD_ON: '\x1b\x33\x08'
   //TXT_BOLD_ON: '\x1b\x21\x08'
-  //
+  //let cutpaper = [0x1d, 0x56, 0x42, 0x00]
 }
